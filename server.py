@@ -3,7 +3,7 @@ import asyncio
 import json
 import websockets
 import argparse
-from detox import DetoxModel
+from detox import FilterModel
 
 parser = argparse.ArgumentParser(description='Process some integers.')
 parser.add_argument('--address', type=str, default='0.0.0.0',
@@ -12,7 +12,7 @@ parser.add_argument('--port', type=int, default = 6612,
                     help='Port to bind service')
 args = parser.parse_args()
 
-detox = DetoxModel()
+detox = FilterModel()
 
 async def detox_service(websocket, path):
     async for data in websocket:

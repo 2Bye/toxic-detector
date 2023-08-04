@@ -20,6 +20,7 @@ async def detox_service(websocket, path):
             pack = json.loads(data)
             user_message = pack['user_message']
             result = detox.get_label(user_message)
+            print(f'Result from service : {result}')
             data = {'event' : 'success', 'result' : result}
             await websocket.send(json.dumps(data))
             
